@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login or Sign Up</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+     body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }   
+
+    .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+  /* video {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1; /* Set z-index to be behind other elements */
+    /* } */ 
+    video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+    }
+    .container {
+      display: flex;
+      flex-direction: column; /* Change to column layout */
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  /* .text-container {
+      width: 1200px;
+      height: 100vh;
+      background-color: #0056b3;
+      color: #fff;
+      padding-top: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: -15px; /* Remove margin */
+  /* } */ 
+    .text-container {
+            width: 80%;
+           /*   background-color: rgba(106, 163, 225, 0.7);Adding opacity */
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 20px; /* Add margin to separate from buttons */
+    }
+    .buttons-container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+    }
+
+
+  /* .buttons-container {
+      width: 50%;
+      height: 100%;
+      margin-top:30%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; /* Center buttons vertically */
+  /* } */ 
+    .button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      border-radius: 20px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 5px;
+    }
+    .button:hover {
+      background-color: #0056b3;
+      border-radius: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="video-container">
+    <video autoplay muted loop>
+        <source src="static/videos/video1.mp4" type="video/mp4">
+        
+      </video>
+    </div>
+
+  <!-- First container with text in the middle -->
+  <div class="container">
+  <!-- <div class="row"> -->
+      <div class="text-container">
+          <div>
+              <h1 style="color:whitesmoke;font-size:50px;">Welcome to Sabio Infotech</h1>
+              <p style="color:whitesmoke;font-size: 30px;">Please Sign In or Sign Up to continue</p>
+          </div>
+      </div>
+      <!-- Second container with text below and buttons -->
+      <div class="buttons-container">
+              <h1 class="text-center mb-4"style="color:white;font-size: 25px;">Get Started</h1>
+              <div>
+                  <!-- <button class="button" onclick="window.location.href='login.html'">Login</button>
+                  <button class="button" onclick="window.location.href='registration.html'">Sign Up</button> -->
+                  <button class="button" onclick="window.location.href='login'">Sign In</button>
+                  <button class="button" onclick="window.location.href='register'">Sign Up</button>
+
+              </div>
+      </div>
+  </div>
+
+</body>
+</html>

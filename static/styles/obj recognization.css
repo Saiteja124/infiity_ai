@@ -1,0 +1,131 @@
+body {
+               font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+               margin: 0;
+               padding: 0;
+               background-color:#F0F8FF;
+           }
+       
+           .container {
+               display: flex;
+               height: 100vh;
+               width:100%;
+           }
+       
+           .options {
+               flex: 1;
+               padding: 20px;
+               background-color:hsla(0, 0%, 95%, 0.726);
+               color:black;
+               width:20%;
+
+           }
+   
+           .options:hover { 
+               background-color:hsla(0, 0%, 95%, 0.726); 
+           }
+   
+           .options a:hover { 
+               background-color:#057909;
+               color:white;
+           }
+       
+           .content {
+               flex: 2;
+               padding: 20px;
+               background-color:rgba(255, 255, 255, 0.741);
+               color: black;
+               overflow-y: auto;
+               width:40%;
+           }
+       
+           .upload-media {
+               flex: 3;
+               padding: 20px;
+               background-color:hsla(0, 0%, 95%, 0.726);
+               text-align: center;
+               align-items: center;
+               color:black;
+               width:40%;
+           }
+       
+           .options a {
+               display: block;
+               color: black;
+               text-decoration: none;
+               margin-bottom: 10px;
+               transition: background-color 0.3s; 
+           }
+       
+           .content-section {
+               display: none;
+           }
+       
+           .content-section.active {
+               display: block;
+           }
+           h1, h2, h3 {
+               color: #029107;
+           }
+          .hover-effect {
+               transition: color 0.3s;
+           }
+   
+           .hover-effect:hover {
+               color: #057909;
+           }
+           .upload-media {
+    background-color: #f1f1f1; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container1 {
+    display: flex; 
+    text-align: center;
+    justify-content: space-between;
+}
+
+.left-container {
+    flex: 1; 
+}
+
+#uploadContainer h2 {
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+#upload-media{
+    margin-bottom: 20px;
+}
+
+#upload-media input[type="file"] {
+    margin-bottom: 10px; 
+}
+
+#uploadStatus {
+    margin-bottom: 10px;
+    font-style: italic; 
+    color: #666; 
+}
+
+
+.btn.btn-primary1{
+ font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image:linear-gradient(131deg, #085C01 ,#0A7201 , #12bb06 , #24981A );
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+   color:white;
+        }
+
+  .btn.btn-primary1:hover:enabled {
+   box-shadow: 0 0.5em 0.5em -0.4em #0B7302  ;
+   background-size: 100% 100%;
+   transform: translateY(-0.15em);
+       }

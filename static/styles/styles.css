@@ -1,0 +1,140 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(241, 228, 237);
+    width:100%;
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/static/images/bgimage23.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.bg-img{
+    height:100%;
+}
+/* Apply styles to container */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Apply styles to headings */
+h2 {
+    margin-bottom: 20px;
+    color:green;
+}
+
+/* Apply styles to form inputs */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Apply styles to submit button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    
+}
+
+/* Apply styles to upload status */
+#uploadStatus {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+/* Apply styles to form inputs */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* CSS for the downloading icon */
+#downloadCSV {
+    position: relative;
+    background-color:  #007bff;
+}
+
+#downloadCSV::after {
+    content: '';
+    background-color:  #0056b3;
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-image: url('/static/images/icon.svg'); /* Replace 'downloading-icon.png' with your actual icon */
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 5px);
+    transform: translateY(-50%);
+}
+
+
+.left-container {
+    float: left; /* Float the container to the left */
+    margin-right: 40px; /* Add margin to create space between container and other elements */
+    margin-bottom: 20px; /* Add margin to create space between containers */
+}
+.right-corner {
+    position: absolute;
+    top: 10px; /* Adjust as needed *//* Adjust as needed */
+    text-align:center;
+    color: white; 
+    margin-left:300px;
+
+    /* Add other styling properties as needed */
+}
+.rightText p{
+    font-size:50px;
+
+}
+.container1{
+    margin-left:40px;
+}

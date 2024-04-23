@@ -1,0 +1,202 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Fields Extraction</title>
+</head>
+<body>
+    <h1>Specify Fields for Extraction</h1>
+    
+    <form id="fieldsForm">
+        <label for="fields">Enter fields (comma-separated):</label><br>
+        <input type="text" id="fields" name="fields" required><br>
+        <button type="submit">Extract Fields</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('fieldsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fields = document.getElementById('fields').value;
+            extractFields(fields);
+        });
+
+        function extractFields(fields) {
+            var formData = new FormData();
+            formData.append('fields', fields);
+
+            fetch('/process_specific_fields', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                // Create a download link for the returned CSV file
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'extracted_columns.csv';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                document.getElementById('result').textContent = 'Extraction complete. Downloading CSV file...';
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific Fields Extraction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f48a;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Specify Fields for Extraction</h1>
+        
+        <form id="fieldsForm">
+            <label for="fields">Enter fields (comma-separated):</label><br>
+            <input type="text" id="fields" name="fields" required><br>
+            <button type="submit">Extract Fields</button>
+        </form>
+        <div id="processingMessage" style="display: none;">Processing...</div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('fieldsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var fields = document.getElementById('fields').value;
+            document.getElementById('processingMessage').style.display = 'block'; // Show processing message
+            extractFields(fields);
+        });
+
+        function extractFields(fields) {
+            var formData = new FormData();
+            formData.append('fields', fields);
+
+            fetch('/process_specific_fields', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                // Clear the result message
+                // document.getElementById('result').textContent = '';
+
+                // Show the completion message after a short delay
+                // setTimeout(function() {
+                //     document.getElementById('result').textContent = 'Extraction complete. Downloading CSV file...';
+                // }, 500); // Delay of 500 milliseconds (adjust as needed)
+                // Create a download link for the returned CSV file
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'extracted_columns.csv';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+                setTimeout(function() {
+                    document.getElementById('result').textContent = 'Extraction complete. Downloading CSV file...';
+                    setTimeout(function() {
+                        document.getElementById('result').textContent = ''; // Clear the message after 3 seconds
+                    }, 3000);
+                }, 100); // Show the message after a slight delay for smoother transition
+
+                // setTimeout(function() {
+                //     document.getElementById('result').textContent = 'Extraction complete. Downloading CSV file...';
+                // }, 3000);
+                // document.getElementById('result').textContent = 'Extraction complete. Downloading CSV file...';
+                // document.getElementById('result').textContent = ''; // Clear the result message
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('result').textContent = 'Error: ' + error.message;
+            })
+            .finally(() => {
+            document.getElementById('processingMessage').style.display = 'none'; // Hide processing message
+            document.getElementById('result').textContent = ''; // Clear the result message
+        });
+        }
+    </script>
+</body>
+</html>

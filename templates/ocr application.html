@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Application</title>
+    <link rel="stylesheet" href="static/styles/ocr application.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <script src="upload.js"></script> -->
+    
+</head>
+<style>
+         #sessionTimeout {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color:#057909;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none; 
+            margin-right: 20px;
+        }
+        .options a.active {
+        background-color: #057909;
+        color: white;
+        }
+
+        .options a.active:hover {
+            background-color: #057909;
+            color: white;
+        }
+
+</style>
+<body>
+    <div class="container">
+        <img src="static\images\logo1.png" alt="Logo" style="position: fixed; top: 0px; left: 10px; width: 100px; height: auto; z-index: 9999;"><br><br>
+                <div class="options"><br><br>
+        <!-- <div class="options"> -->
+            <h1>Applications</h1>
+            <a href="#" class="ocr-option active">OCR Application</a>
+            <a href="process_specific_fields" class="ocr-option">OCR Specific fields</a>
+            <a href="#" class="ocr-option">OCR Boundary </a>
+            <a href="detect" class="obj-recognization">Object Recognization</a>
+            <a href="generate_response"class="llm">LLM</a>
+        </div>
+        <a href="#" class="logout-option" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>logout
+            </a>
+        
+        <!-- <a href="#" class="logout-option" onclick="logout()"
+            <i class="'fas fa-sign-out-alt"></i>logout
+        </a> -->
+        <!-- </div> -->
+        <div class="upload-pdf">
+            <div class="container1">
+                <div id="uploadContainer"class="left-container"  style="float:left;"><br><br>
+                    <h2 style="color:#057909;margin-top:4px;">Upload PDF</h2>
+                    <form id="uploadForm">
+                        <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+                        <button type="submit" class="btn btn-primary1">Upload</button>
+                    </form>
+                    <div class="message-container">
+                        <!-- Messages will be dynamically added here -->
+                    </div>
+                    <!-- <div id="uploadStatus"></div> -->
+                    <button id="downloadCSV"class="btn btn-primary1">Download CSV</button>
+                </div>
+               
+             </div>
+             <div class="robot-div">
+                <img src="static/images/rob5.gif" style="width:300px;height:300px;bottom:8%;">
+            </div>
+        </div>
+        <script src="static/scripts/upload.js"></script>
+            <!-----------Upload Pdf Section end-->
+
+<!--------Content Section Starts---------->
+        <div class="content"><br>
+            <div class="content-section ocr-content active">
+                <h1>OCR Application</h1>
+                <p>
+                <!-- <h1>What is OCR (Optical Character Recognition)?</h1> -->
+    <p>OCR technology is used to extract text from images or documents, making data management more efficient for businesses by converting information into machine-readable text.</p>
+
+    <h2>Importants of OCR </h2>
+    <p>OCR is crucial for businesses as it streamlines workflows by digitizing large volumes of paperwork such as forms, invoices, legal documents, and contracts. </p>
+    <p>It is particularly valuable in industries like healthcare, legal, finance, and retail for tasks such as patient records, document analysis, transaction processing, and inventory management
+    <!-- <h2>How does OCR work?</h2>
+    <p>The OCR engine or OCR software works by using the following steps:</p>
+    <ol>
+        <li><strong>Image acquisition:</strong> A scanner reads documents and converts them to binary data. The OCR software analyzes the scanned image and classifies the light areas as background and the dark areas as text.</li>
+        <li><strong>Preprocessing:</strong> The OCR software first cleans the image and removes errors to prepare it for reading. These are some of its cleaning techniques:</li>
+        <ul>
+            <li>Deskewing or tilting the scanned document slightly to fix alignment issues during the scan.</li>
+            <li>Despeckling or removing any digital image spots or smoothing the edges of text images.</li>
+            <li>Cleaning up boxes and lines in the image.</li>
+        </ul>
+        <li><strong>Script recognition for multi-language OCR technology</strong></li>
+        <li><strong>Text recognition:</strong> The two main types of OCR algorithms or software processes that an OCR software uses for text recognition are called pattern matching and feature extraction.</li>
+        <ul>
+            <li><strong>Pattern matching:</strong> Pattern matching works by isolating a character image, called a glyph, and comparing it with a similarly stored glyph. Pattern recognition works only if the stored glyph has a similar font and scale to the input glyph. This method works well with scanned images of documents that have been typed in a known font.</li>
+        </ul>
+    </ol> -->
+</p>
+ </div>
+            <div class="content-section chatbot-content">
+                <h2>AI Chat GPT</h2>
+                <p>
+                    <h1>What is AI Chatbot ?</h1>
+        <p>Optical Character Recognition (OCR) is the process that converts an image of text into a machine-readable text format. For example, if you scan a form or a receipt, your computer saves the scan as an image file. You cannot use a text editor to edit, search, or count the words in the image file. However, you can use OCR to convert the image into a text document with its contents stored as text data.</p>
+
+        <ol>
+            <li><strong>Image acquisition:</strong> A scanner reads documents and converts them to binary data. The OCR software analyzes the scanned image and classifies the light areas as background and the dark areas as text.</li>
+            <li><strong>Preprocessing:</strong> The OCR software first cleans the image and removes errors to prepare it for reading. These are some of its cleaning techniques:</li>
+            <ul>
+                <li>Deskewing or tilting the scanned document slightly to fix alignment issues during the scan.</li>
+                <li>Despeckling or removing any digital image spots or smoothing the edges of text images.</li>
+                <li>Cleaning up boxes and lines in the image.</li>
+            </ul><!-- <li><strong>Image acquisition:</strong> A scanner reads documents and converts them to binary data. The OCR software analyzes the scanned image and classifies the light areas as background and the dark areas as text.</li>
+            <li><strong>Preprocessing:</strong> The OCR software first cleans the image and removes errors to prepare it for reading. These are some of its cleaning techniques:</li>
+            <ul>
+                <li>Deskewing or tilting the scanned document slightly to fix alignment issues during the scan.</li>
+                <li>Despeckling or removing any digital image spots or smoothing the edges of text images.</li>
+                <li>Cleaning up boxes and lines in the image.</li>
+            </ul>
+            <li><strong>Script recognition for multi-language OCR technology</strong></li>
+            <li><strong>Text recognition:</strong> The two main types of OCR algorithms or software processes that an OCR software uses for text recognition are called pattern matching and feature extraction.</li>
+            <ul>
+                <li><strong>Pattern matching:</strong> Pattern matching works by isolating a character image, called a glyph, and comparing it with a similarly stored glyph. Pattern recognition works only if the stored glyph has a similar font and scale to the input glyph. This method works well with scanned images of documents that have been typed in a known font.</li>
+            </ul>
+        </ol></p>
+        <h2>Why is OCR important?</h2>
+        <p>Most business workflows involve receiving information from print media. Paper forms, invoices, scanned legal documents, and printed contracts are all part of business processes. These large volumes of paperwork take a lot of time and space to store and manage. Though paperless document management is the way to go, scanning the document into an image creates challenges. The process requires manual intervention and can be tedious and slow.</p>
+        <p>Moreover, digitizing this document content creates image files with the text hidden within it. Text in images cannot be processed by word processing software in the same way as text documents. OCR technology solves the problem by converting text images into text data that can be analyzed by other business software. You can then use the data to conduct analytics, streamline operations, automate processes, and improve productivity.</p>
+    
+        <h2>How does OCR work?</h2>
+        <p>The OCR engine or OCR software works by using the following steps:</p> -->
+            </div>
+        </div>
+        
+        
+        <!-- <div class="upload-pdf">
+            <div class="container1">
+                <div id="uploadContainer"class="left-container"  style="float:left;"><br><br>
+                    <h2 style="color:#057909;">Upload PDF</h2>
+                    <form id="uploadForm">
+                        <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+                        <button type="submit" class="btn btn-primary1">Upload</button>
+                    </form>
+                    <div id="uploadStatus"></div>
+                    <button id="downloadCSV"class="btn btn-primary1">Download CSV</button>
+                </div>
+               
+            </div>  -->
+            <!-- <div class="robot-container">
+                <img src="static/images/robot1.webp" alt="Robot" class="robot">
+            </div> -->
+        <!-- </div> -->
+    
+        </div>
+    </div>
+    <div id="sessionTimeout">Session Timeout: <span id="countdown">600</span> seconds</div>
+    <script>
+        // Set session timeout duration in seconds (e.g., 60 seconds)
+        const sessionTimeoutDuration = 600; // 60 seconds
+
+        let logoutTimer;
+        let countdownValue = sessionTimeoutDuration;
+
+        function startLogoutTimer() {
+            logoutTimer = setInterval(() => {
+                countdownValue--;
+                document.getElementById("countdown").textContent = countdownValue;
+                if (countdownValue <= 0) {
+                    clearInterval(logoutTimer);
+                    window.location.href = "login"; // Redirect to login page
+                }
+            }, 1000); // Update every second
+        }
+
+        function resetLogoutTimer() {
+            clearInterval(logoutTimer);
+            countdownValue = sessionTimeoutDuration;
+            startLogoutTimer();
+        }
+
+        // Reset the logout timer on user activity
+        // document.addEventListener("mousemove", resetLogoutTimer);
+        // document.addEventListener("keypress", resetLogoutTimer);
+        // document.addEventListener("click", resetLogoutTimer);
+        // document.addEventListener("scroll", resetLogoutTimer);
+
+        // Start the initial timer
+        startLogoutTimer();
+        
+        // Show the session timeout countdown
+        document.getElementById("sessionTimeout").style.display = "block";
+
+        // Function to handle logout
+function logout()
+        {
+            window.location.href = "/";
+        }
+    </script>
+    <!-- <script src="static/scripts/upload.js"></script> -->
+    <!-- <script src="static/Scripts/ocr application.js"></script> -->
+
+
+    </body>
+    </html>

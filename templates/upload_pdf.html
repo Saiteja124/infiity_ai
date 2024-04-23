@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <!-- <link rel="stylesheet" href="static/styles/styles.css"> -->
+    <!-- <script src="static/scripts/login.js" defer></script>
+    <script src="static/scripts/server.js"></script> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(244, 246, 247);
+            /* background-image: url(/static/images/bgimage1.jpeg); */
+            background-size: cover; /* Adjust as needed */
+            background-repeat: no-repeat; /* Adjust as needed */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+        display: flex;
+        flex-direction: column; /* Change to column layout */
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        }
+        .text-container {
+            width: 80%;
+           /*   background-color: rgba(106, 163, 225, 0.7);Adding opacity */
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 20px; /* Add margin to separate from buttons */
+        }
+        /* #downloadCSV {
+        position: relative;
+        background-color:  #007bff;
+        } */
+        button {
+        margin-bottom: 10px; /* Adjust the margin-bottom as needed */
+        }
+        button[type="submit"]:hover {
+        background-color: #0056b3;
+        }
+        .processing-message {
+        background-color: #ffffcc; /* Background color */
+        color: #333; /* Text color */
+        padding: 10px; /* Padding around the message */
+        margin-bottom: 10px; /* Spacing between messages */
+        border: 1px solid #ccc; /* Border */
+        border-radius: 5px; /* Rounded corners */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="text-container">
+        <div>
+        <h1 style="color: #081c52;">Welcome to Our OCR Text Extraction Service</h1>
+        <p>   </p>
+        <h3 style="color: #700d12d5;">Empower your workflow with our advanced OCR text extraction service. </h3>
+        <h3 style="color: #700d12d5;">Seamlessly convert images, PDFs, scanned documents into structured data for enhanced productivity and insights.</h3>
+    </div>
+    </div>
+    <div class="main-content">
+        <!-- <h3>Upload PDF</h3> -->
+        <!-- Instruction text for uploading PDF -->
+        <h3 class="instruction-text" style="color: #081c52;">Select a PDF file to upload</h3>
+        <form id="uploadForm">
+            <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+            <button type="submit">Upload</button>
+        </form>
+        <div class="message-container">
+            <!-- Messages will be dynamically added here -->
+        </div>
+        <!-- <div id="uploadStatus"></div> -->
+
+        <button id="downloadCSV" type="submit">Download CSV</button>
+    </div>
+    <script src="static/scripts/upload.js"></script>
+</body>
+</html>
+
+
+<!-- <div class="main-content">
+    <div class="container1">
+        <div id="uploadContainer"class="left-container"  style="float:left;"><br><br>
+            <h2 style="color:#057909;">Upload PDF</h2> -->
+    <!-- <h3>Upload PDF</h3> -->
+    <!-- Instruction text for uploading PDF -->
+    <!-- <h3 class="instruction-text" style="color: #081c52;">Select a PDF file to upload</h3> -->
+    <!-- <form id="uploadForm">
+        <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+        <button type="submit" class="btn btn-primary1">Upload</button>
+    </form>
+    <div class="message-container"> -->
+        <!-- Messages will be dynamically added here -->
+    <!-- </div>
+    <div id="uploadStatus"></div> -->
+
+    <!-- <button id="downloadCSV" type="submit">Download CSV</button> -->
+    <!-- <button id="downloadCSV"class="btn btn-primary1">Download CSV</button>
+</div>
+</div> -->

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM</title>
+<link rel="stylesheet" href="static/styles/llm.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+               <style>
+                              #sessionTimeout {
+                                    position: fixed;
+                                    top: 10px;
+                                    right: 10px;
+                                    background-color:#057909;
+                                    color: white;
+                                    font-weight: bold;
+                                    padding: 10px 20px;
+                                    border-radius: 5px;
+                                    font-size: 16px;
+                                    display: none; 
+                                    margin-right:20px;
+                                }    
+                               
+                        </style>
+                        <body>
+                                       <!----------First Box-->
+                                       
+                                       <div class="container">
+                                        <img src="static\images\logo1.png" alt="Logo" style="position: fixed; top: 0px; left: 10px; width: 100px; height: auto; z-index: 9999;"><br><br>
+                                           <div class="options"><br><br>
+                                               <!-- <h1>Options</h1> -->
+                                               <h1>Applications</h1>
+                                               <a href="upload_pdf" class="ocr-option " data-target="ocr-content">OCR Full Application</a>
+                                               <a href="process_specific_fields" class="ocr-option" data-target="ocr-fields1-content">OCR Specific Fields</a>
+                                               <a href="ocr boundary.html" class="ocr-boundary">OCR Boundary</a>
+                                               <!---<a href="#" class="chatbot-option" data-target="chatbot-content">AI Chat GPT</a>-->
+                                               <a href="detect" class="obj-recognization">Object Recognization</a>
+                                               <a href="generate_response"class="llm">LLM</a>
+                        
+                          <a href="#" class="logout-option" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                          </div>
+                          
+                        <!--------Second box-->
+                        <!-- <br><br><br>  <div class="upload-pdf">
+                                        <div class="container1">
+                                            <h2 class="upload-heading"></h2> 
+                                            <div class="question-container">
+                                             <h2 class="question-heading">Ask a Question</h2>
+                                             <p class="question-text">Have a question? Feel free to ask below:</p>
+                                             <input type="text" class="question-input" placeholder="Type your question here...">
+                                             <button type="submit" class="question-submit"  onclick="submitQuestion()">Submit</button>
+                                             <div id="response-placeholder"></div> -->
+                                             <!-- Add a div to display the processing status -->
+                                
+                                <br><br><br> <div class="upload-pdf">
+                                                <div class="container1">
+                                                    <h2 class="upload-heading"></h2>
+                                                    <div class="question-container">
+                                                        <h2 class="question-heading">Ask a Question</h2>
+                                                        <p class="question-text">Have a question? Feel free to ask below:</p>
+                                                          <!-- Add ID to the form for easy access  -->
+                                                        <form id="question-form">
+                                                            <input type="text" class="question-input" id= "question-input" placeholder="Type your question here...">
+                                                            <!-- Prevent default form submission -->
+                                                            <button type="button" class="question-submit" onclick="submitQuestion()">Submit</button>
+                                                        </form>
+                                                        <div id="processing-status" style="display: none;">Processing...</div>
+                                
+                                                        <!-- Placeholder to display the response -->
+                                                        <div id="response-placeholder"></div>
+                                         </div>
+                                     </div>
+                                 </div>
+                                       
+                            
+                                    
+                        
+                                    
+                                       <!---------3rd Box------------->
+                        <div class="content"><br><br>
+                                       <div class="content-section ocr-fields1-content">
+                                        <h1>LLM Application</h1>
+                                        <p>
+                                        <!-- <h1>What is Object LLM Application</h1> -->
+                            <p>Large language models (LLMs) are a type of artificial intelligence (AI) program that can recognize and generate text. </p>
+                        
+                            <h2>Why is LLM Application important?</h2>
+                            <p> These models can understand and interpret human language with a high degree of accuracy. This capability is crucial for various applications, including virtual assistants, chatbots, sentiment analysis, and text classification.</p>
+                            <p>LLMs can be used to analyze scientific data and literature, which can help researchers make new discoveries and develop new technologies.</p>
+                        
+                            <h2>How does LLM Application work?</h2>
+                            <p>The LLM Application engine or LLM Application software works by using the following steps:</p>
+                            <ol>
+                                <li><strong>Pre-training:</strong> Large language models are pre-trained on vast amounts of text data from the internet. During pre-training, the model learns to predict the next word in a sequence of text given the preceding words. This process is unsupervised and relies on self-attention mechanisms to capture dependencies between words in the input sequence.</li>
+                                <li><strong>Prediction and Generation:</strong> Once the model is trained, it can be used for various tasks, such as text generation, question answering, or sentiment analysis. During inference, the model processes the input data through its layers, making predictions or generating output based on the learned patterns in the training data.</li>
+                                <ul>
+                                    <li>Deskewing or tilting the scanned document slightly to fix alignment issues during the scan.</li>
+                                    <li>Before feeding text data into the model, it is tokenized into smaller units, typically words or subwords, and converted into numerical embeddings.</li>
+                                    <li>Large language models are evaluated on their performance on specific tasks using metrics such as accuracy</li>
+                                </ul>
+                                <li><strong>Script recognition for multi-language LLM Application technology</strong></li>
+                                <li><strong>Text Generation:</strong> Large language models can generate human-like text based on prompts or input. This ability is valuable for tasks such as content creation, creative writing assistance, generating code snippets, and personalized recommendations.</li>
+                                <ul>
+                                    <li><strong>Summarization:</strong> Large language models can summarize long documents or articles, extracting the most important information. This is useful for tasks such as document summarization, news aggregation, and information retrieval.</li>
+                                </ul>
+                            </ol>
+                        </p>                   </div>
+                        </div>
+                        </div>
+                        
+                        
+                        <div id="sessionTimeout">Session Timeout: <span id="countdown">600</span> seconds</div>
+                        <script>
+                        // Session Timeout Script
+                                       const sessionTimeoutDuration = 600; // 60 seconds
+                                       let logoutTimer;
+                                       let countdownValue = sessionTimeoutDuration;
+                               
+                                       function startLogoutTimer() {
+                                           logoutTimer = setInterval(() => {
+                                               countdownValue--;
+                                               document.getElementById("countdown").textContent = countdownValue;
+                                               if (countdownValue <= 0) {
+                                                   clearInterval(logoutTimer);
+                                                   window.location.href = "login"; // Redirect to login page
+                                               }
+                                           }, 1000); // Update every second
+                                       }
+                               
+                                       function resetLogoutTimer() {
+                                           clearInterval(logoutTimer);
+                                           countdownValue = sessionTimeoutDuration;
+                                           startLogoutTimer();
+                                       }
+                               
+                                       startLogoutTimer();
+                                       document.getElementById("sessionTimeout").style.display = "block";
+                        
+                                       // Function to handle form submission
+                                        function submitQuestion() {
+                                            var question = document.getElementById("question-input").value;
+
+                                            // Display processing status
+                                            document.getElementById("processing-status").style.display = "block";
+
+                                            var xhr = new XMLHttpRequest();
+                                            xhr.open("POST", "/generate_response", true);
+                                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                                            // Hide processing status when response received
+                                            document.getElementById("processing-status").style.display = "none";
+                                        
+                                            xhr.onreadystatechange = function() {
+                                                if (xhr.readyState === XMLHttpRequest.DONE) {
+                                                    // Hide processing status when response received
+                                                    // document.getElementById("processing-status").style.display = "none";
+                                                    if (xhr.status === 200) {
+                                                        var response = JSON.parse(xhr.responseText);
+                                                        document.getElementById("response-placeholder").innerHTML = "<h3>Response:</h3><p>" + response.truncated_response + "</p>";
+                                                    } else {
+                                                        console.error("Request failed:", xhr.statusText);
+                                                    }
+                                                }
+                                            };
+                                            xhr.send("question=" + encodeURIComponent(question));
+                                        }
+                        // Function to handle logout
+                        function logout() 
+                                {
+                                    window.location.href = "/";
+                                }
+
+                       
+ // Get the current URL
+ var currentUrl = window.location.href;
+
+ // Select all navigation links
+ var navLinks = document.querySelectorAll('.ocr-option, .ocr-boundary, .obj-recognization, .llm');
+
+ // Loop through each link
+ navLinks.forEach(function(link) {
+     // Check if the link's href matches the current URL
+     if (link.href === currentUrl) {
+         // Add the 'active' class to the link
+         link.classList.add('active');
+     }
+ });
+ </script>
+                        <!-- <script src="ocr application.js"></script> -->
+                        </body>
+                        </html>        
+</body>
+</html>

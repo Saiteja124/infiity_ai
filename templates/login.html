@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <script src="static/scripts/registration.js"></script>
+    <link rel="stylesheet" href="upload.html">
+    <link rel="stylesheet" href="registration.html">
+    <script src="static/scripts/login.js"></script>
+
+
+    <script src="static/scripts/server.js"></script>
+    
+</head>
+<body>
+    <div class="bg-img">
+        <div class="container">
+      
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <button type="submit" id="loginButton">Login</button>
+                </form>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const uploadForm = document.getElementById('uploadForm');
+            const uploadStatus = document.getElementById('uploadStatus');
+            const uploadContainer = document.getElementById('uploadContainer');
+            const loginContainer = document.getElementById('loginContainer');
+            const downloadButton = document.getElementById('downloadCSV');
+            let uploadedFileName = '';
+    
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const username = loginForm.querySelector('#username').value.trim();
+                const password = loginForm.querySelector('#password').value.trim();
+                
+                // Validate username and password
+                if (!isValidCredentials(username, password)) {
+                    alert('Invalid username or password.');
+                    return;
+                }
+
+                // Send login data to server for authentication
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Login successful!');
+
+                        // Redirect to the upload page after successful login
+                        // window.location.href = 'Sabio_use_cases';
+                        window.location.href = 'upload_pdf';
+
+                        loginContainer.style.display = 'none'; // Hide the login container
+                        uploadContainer.style.display = 'block'; // Display the upload container
+                        // isAuthenticated = true; // Set authentication status to true
+                        // uploadSection.style.display = 'block'; // Display the upload form
+                        // loginForm.querySelector('button[type="submit"]').disabled = true; // Disable the login button
+                    } else {
+                        alert('Authentication failed. ' + data.message);
+                    }
+                })
+                // .catch(error => {
+                //     console.error('Error:', error);
+                //     alert('An error occurred during authentication.');
+                // });
+            });
+    
+            function isValidCredentials(username, password) {
+                // Perform validation here
+                // Username must contain only alphabets
+                const usernamePattern = /^[A-Za-z0-9]+$/;
+                // For simplicity, let's assume any non-empty username and password is valid
+                return usernamePattern.test(username) && username !== '' && password !== '';
+            }
+        });
+        </script>
+                          
+    </body>
+    </html>
+     -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Login Page</title>
+         <link rel="stylesheet" href="static/styles/styles.css">
+         <link rel="stylesheet" href="upload.html">
+         <link rel="stylesheet" href="registration.html">
+         <script src="static/scripts/login.js"></script>
+         <script src="static/scripts/server.js"></script>
+     </head>
+     <style>
+        .error-message {
+            color: red;
+            font-size: 0.8em; /* Decrease the text size to 80% of the default size */
+        }
+    </style>
+     <body>
+         <div class="bg-img">
+             <div class="container">
+                 <h2>Login</h2>
+                 <form id="loginForm">
+                     <label for="username">Username:</label>
+                     <input type="text" id="username" name="username" required><br><br>
+                     <label for="password">Password:</label>
+                     <input type="password" id="password" name="password" required><br><br>
+                     <div id="loginError" class="error-message"></div><br><br>
+                     <button type="submit" id="loginButton">Login</button>
+                 </form>
+             </div>
+         </div>
+         <!-- <script src="static/scripts/login_validation.js"></script> -->
+     </body>
+     </html>
+     

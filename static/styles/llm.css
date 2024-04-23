@@ -1,0 +1,194 @@
+body {
+               font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+               margin: 0;
+               padding: 0;
+               background-color: #F0F8FF;
+           }
+           
+           .container {
+               display: flex;
+               height: 100vh;
+               width: 100%;
+           }
+           
+           .options {
+               flex: 1;
+               padding: 20px;
+               background-color: hsla(0, 0%, 95%, 0.921);
+               color: black;
+               width: 20%;
+           
+           }
+           
+           .options:hover {
+               background-color: hsla(0, 0%, 95%, 0.921);
+           }
+           
+           .options a:hover {
+               background-color: #057909;
+               color: white;
+           }
+           .content{
+            flex:2;
+            padding:20px;
+            background-color: rgba(255, 255, 255, 0.741);
+            color:black;
+            overflow-y:auto;
+            width:40%;
+           
+           }
+           
+            .upload-pdf {
+                              flex: 3;
+                              padding: 20px;
+                              background-color: hsla(0, 0%, 95%, 0.726);
+                              color: black;
+                              width: 40%; 
+                              text-align: center;
+                              align-items: center;/* Set width to 40% for upload-pdf container */
+                             /* Remove transition effect */
+                             }
+            .options a{
+                display:block;
+                color:black;
+                text-decoration: none;
+                margin-bottom: 10px;
+                transition: background-color 0.3s;
+            }         
+           .container1 {
+               justify-content: space-between;
+               align-items: center;
+           }
+          /* Your CSS styles go here */
+        .question-container {
+            margin-top: 20px;
+        }
+
+        .question-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .question-text {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .question-input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /*______________ */
+        .question-form {
+          width: 80%;
+          padding: 10px;
+          margin-top: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+      }
+      /*______________ */
+        .question-submit {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #057909;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .question-submit:hover {
+            background-color: #045c07;
+        }
+/*-----------------PDFS SECTION----------------------------------------*/
+           .upload-heading {
+               text-align: center;
+               font-size: 24px;
+               color: #057909; /* Green color */
+               margin-top: 10px; /* Adjust as needed */
+               margin-bottom: 20px; /* Add space between heading and file upload */
+           }
+           .file-limit-msg {
+               color: #888;
+               font-size: 14px;
+               margin-top: 5px; /* Adjust as needed */
+               margin-bottom: 20px; /* Add space between the file upload and the message */
+           }
+           
+           .centered {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+             }
+             .pdf-container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh; /* Optional: adjust this based on your layout */
+             }
+             
+           .dropdown {
+               display: inline-block;
+               position: relative;
+               top:20%;
+             }
+             .upload-pdf .container1 #pdfFile {
+               margin-left:100px; /* Adjust the value as needed to move the input more to the right */
+           }
+             #pdfSelect {
+               display: none;
+             }
+             .dropdown-toggle {
+               padding:0px;
+               background-color: #f0f0f0;
+               cursor: pointer;
+             }
+             .dropdown-content {
+               display: none;
+               position: absolute;
+               background-color: #fff;
+               min-width: 160px;
+               max-height: 200px; /* Set maximum height */
+               overflow-y: auto; /* Enable vertical scrollbar */
+               box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+               z-index: 1;
+             }
+             .dropdown-content a {
+               color: black;
+               padding: 12px 16px;
+               text-decoration: none;
+               display: block;
+             }
+             .dropdown-content a:hover {
+               background-color: #029107;
+             }
+             .dropdown.active .dropdown-content {
+               display: block;
+             }
+             .pdf-container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               min-height: 80vh; /* Adjust this based on your layout */
+           }
+             /* Positioning the logout option */
+             .logout-option {
+               position: absolute;
+               bottom: 20px;
+               left: 20px;
+               color:black;
+               border: none;
+           }
+           .logout-option:hover{
+               color:#057909;
+               background-color:rgba(255,255,255,0.5);
+           }

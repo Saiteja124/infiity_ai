@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Application</title>
+    <link rel="stylesheet" href="static/styles/obj recognization.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    
+</head>
+<style>
+         #sessionTimeout {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color:#057909;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none;
+            margin-right: 20px; 
+        }
+        
+    .options a.active {
+    background-color: #057909;
+    color: white;
+}
+
+.options a.active:hover {
+    background-color: #057909;
+    color: white;
+}
+
+</style>
+<body>
+    <div class="container">
+        <img src="static\images\logo1.png" alt="Logo" style="position: fixed; top: 0px; left: 10px; width: 100px; height: auto; z-index: 9999;"><br><br>
+        <div class="options"><br><br>
+            <h1>Applications</h1>
+            <a href="upload_pdf" class="ocr-option ative">OCR Application</a>
+            <a href="process_specific_fields" class="ocr-option">OCR Specific fields</a>
+            <a href="#" class="ocr-boundary">OCR Boundary</a>
+            <!--<a href="#" class="chatbot-option">AI Chat GPT</a>--->
+            <a href="detect" class="obj-recognization">Object Recognization</a>
+            <a href="generate_response" class="llm-application">LLM Application</a>
+        </div>
+        <a href="#" class="logout-option" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>logout
+        </a>
+        <div class="upload-media">
+               <div class="container1">
+                   <div id="uploadContainer" class="left-container" style="float:left;">
+                       <br><br>
+                       <!-- <form id="uploadForm" enctype="multipart/form-data"> -->
+                        <!-- <form id="uploadForm" method="POST" enctype="multipart/form-data"></form> -->
+                        <h2 style="color:#057909;margin-top:4px;">Upload an Image <i class="fa-regular fa-file-image" style="margin-right:10px;"></i>/Video <i class="fa-regular fa-file-video" style="margin-left:2px;"></i></h2>
+
+                        <form method='POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+                            {{form.hidden_tag()}}
+                            {{form.file(class_="custom-file-input")}}
+                            <div>
+                                <button type="submit" name="favorite" value="x" class="btn btn-primary1">
+                                    Upload
+                                </button>
+                            </div>
+                        </form>
+                        <section class="col-sm">
+                            <img src="{{ url_for('video') }}" alt="Upload video" style="width: 600px; height: 700px; border-radius: 100px; object-fit: contain; margin: 40px; border-bottom-left-radius: 40px;">
+                        </section>
+
+                       <div id="uploadStatus"></div>
+                   </div>
+               </div>
+           </div>
+           <script>
+            document.getElementById('uploadForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Create FormData object to send file
+                var formData = new FormData();
+                formData.append('file', document.getElementById('mediaFile').files[0]);
+    
+                // Send POST request to Flask server
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/detect', true);
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        // Display response from server
+                        document.getElementById('result').innerHTML = xhr.responseText;
+                    } else {
+                        // Handle errors
+                        document.getElementById('result').innerHTML = 'Error: ' + xhr.statusText;
+                    }
+                };
+                xhr.send(formData);
+            });
+        </script>
+        <div class="content">
+            <div class="content-section ocr-content active">
+                <br>
+                <h2>Object Detection</h2>
+                <p>
+                <h1>What is Object Detection</h1>
+    <p>Object detection is a computer vision task that involves identifying and locating objects within an image or a video frame. The goal of object detection is to not only recognize what types of objects are present in the image but also to determine their precise locations by drawing bounding boxes around them.</p>
+
+    <h2>Why is Object Detection important?</h2>
+    <p> Object detection has a wide range of practical uses.  For instance, it's  used in self-driving cars to identify pedestrians, traffic signals, and lanes,  leading to safer roads It's also  employed in video surveillance systems for security purposes</p>
+    <p>Object detection  goes beyond just identifying objects. It can pinpoint their location within the image or video frame,  even  if multiple objects are present. This allows for  more  in-depth  image analysis  like counting objects or tracking their movement</p>
+
+    <h2>How does Object Detection work?</h2>
+    <p>The Object Detection engine or Object Detection software works by using the following steps:</p>
+    <ol>
+        <li><strong>Input Image:</strong> The input image is preprocessed, which may include steps like resizing, normalization, and color space conversion to prepare the image for the object detection model.</li>
+        <li><strong>Preprocessing:</strong> Before detecting objects, the system needs to extract meaningful features from the input image. This is often achieved through deep learning</li>
+        <ul>
+            <li>Deskewing or tilting the scanned document slightly to fix alignment issues during the scan.</li>
+            <li>Despeckling or removing any digital image spots or smoothing the edges of text images.</li>
+            <li>Cleaning up boxes and lines in the image.</li>
+        </ul>
+        <li><strong>Script recognition for multi-language Object Detection technology</strong></li>
+        <li><strong>Object Localization:</strong> Object detection not only involves identifying objects but also localizing them within the image. Localization refers to determining the spatial extent of objects by predicting bounding boxes that enclose them.</li>
+        <ul>
+            <li><strong>Classification:</strong> Once objects are localized, the system classifies each detected object into predefined categories or classes. This step involves assigning a label or category to each bounding box, indicating what type of object it represents (e.g., person, car, dog, etc.). Classification is usually performed using a classification head attached to the feature extraction network, which outputs probabilities or scores for each class.</li>
+        </ul>
+    </ol>
+</p>
+ </div>
+ 
+    <div id="sessionTimeout">Session Timeout: <span id="countdown">600</span> seconds</div>
+    <script>
+// Set session timeout duration in seconds (e.g., 60 seconds)
+const sessionTimeoutDuration = 600; // 60 seconds
+let logoutTimer;
+let countdownValue = sessionTimeoutDuration;
+
+function startLogoutTimer() {
+    logoutTimer = setInterval(() => {
+        countdownValue--;
+        document.getElementById("countdown").textContent = countdownValue;
+        if (countdownValue <= 0) {
+            clearInterval(logoutTimer);
+            window.location.href = "login"; // Redirect to login page
+        }
+    }, 1000); // Update every second
+}
+
+function resetLogoutTimer() {
+    clearInterval(logoutTimer);
+    countdownValue = sessionTimeoutDuration;
+    startLogoutTimer();
+}
+// Start the initial timer
+startLogoutTimer();
+
+// Show the session timeout countdown
+document.getElementById("sessionTimeout").style.display = "block";
+
+//accepting the files with mp4,avi,jpeg,png
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        var fileInput = document.getElementById('mediaFile');
+        var file = fileInput.files[0];
+
+        if (!file) {
+            displayMessage("Please select a file.", false);
+            return;
+        }
+
+        var fileType = file.type;
+        var validImageTypes = ["image/png", "image/jpeg"];
+        var validVideoTypes = ["video/mp4", "video/avi"];
+
+        if (validImageTypes.includes(fileType) || validVideoTypes.includes(fileType)) {
+            // Simulate processing time
+            displayMessage("Processing...", true);
+
+            // Simulate asynchronous upload process
+            setTimeout(function() {
+                displayMessage("Successful upload.", true);
+            }, 2000); // Change this value to suit your actual processing time
+        } else {
+            displayMessage("Please select a valid image (PNG or JPEG) or video (MP4 or AVI) file.", false);
+        }
+    });
+
+    function displayMessage(message, success) {
+        var uploadStatus = document.getElementById('uploadStatus');
+        uploadStatus.innerHTML = message;
+        if (success) {
+            uploadStatus.style.color = "#057909"; // Green color for success
+        } else {
+            uploadStatus.style.color = "red"; // Red color for error
+        }
+    }
+
+    function logout() {
+        window.location.href = "/";
+    }
+
+
+ </script>
+    <!-- <script src="ocr application.js"></script> -->
+
+
+</body>
+</html>
+

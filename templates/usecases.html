@@ -1,0 +1,192 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <script src="static/scripts/registration.js"></script>
+    <script src="static/scripts/server.js"></script>
+    <style>
+    .sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    /* .bg-img {
+    /* Add your background image styles here */
+        /* } */ 
+
+    </style>
+</head>
+<body>
+    <div class="bg-img">
+        <div class="sidebar">
+            <h2>Upload PDF</h2>
+            <form id="uploadForm">
+                <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="uploadStatus"></div>
+            <button id="downloadCSV">Download CSV</button>
+        </div>
+    </div>
+    <script src="static/scripts/login.js"></script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="static/styles/styles.css"> 
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Upload PDF</h2>
+        <form id="uploadForm">
+            <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="uploadStatus"></div>
+        <button id="downloadCSV">Download CSV</button>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome to the Upload Page</h1>
+        <p>This is the main content area. You can add any additional content here.</p>
+    </div>
+
+    <script src="static/scripts/login.js"></script> 
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <script src="static/scripts/login.js" defer></script>
+    <script src="static/scripts/server.js"></script>
+</head>
+<body>
+     <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar Content</h2>
+            <p>This is some content on the sidebar.</p>
+            <p>You can add any additional content here.</p> 
+        </div>
+        <div class="main-content">
+            <h2>Upload PDF</h2>
+            <form id="uploadForm">
+                <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="uploadStatus"></div>
+            <button id="downloadCSV">Download CSV</button>
+        </div>
+    </div>
+    <script src="static/scripts/upload.js"></script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <script src="static/scripts/login.js" defer></script>
+    <script src="static/scripts/server.js"></script>
+    <style>
+        /* Additional CSS styles for the upload page */
+        .instruction-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+     <div class="container"> -->
+    <!-- <div class="main-content">
+        <h2>Sidebar Content</h2>
+        <p>This is some content on the sidebar.</p>
+        <p>You can add any additional content here.</p>
+    </div>
+    <div class="main-content">
+        <h2>Upload PDF</h2> -->
+        <!-- Instruction text for uploading PDF -->
+         <!-- <p class="instruction-text">Please select a PDF file to upload:</p>
+        <form id="uploadForm">
+            <input type="file" id="pdfFile" accept=".pdf" required><br><br>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="uploadStatus"></div>
+        <button id="downloadCSV">Download CSV</button>
+    </div>
+    </div>
+    <script src="static/scripts/upload.js"></script>
+</head>
+<body> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Upload PDF</title>
+    <link rel="stylesheet" href="static/styles/styles.css"> 
+    <script src="static/scripts/login.js" defer></script>
+    <script src="static/scripts/server.js"></script> -->
+    <!-- <link rel="stylesheet" href="static/styles/styles.css"> -->
+    <link rel="stylesheet" href="specific_fields.html">
+    <style>
+        /* Additional CSS styles for the upload page */
+        body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(250, 245, 250);
+        width:100%;
+        margin: 0;
+        padding: 0;
+        }
+        .instruction-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="ocr-cases">
+        <h1 style="color:rgb(36, 2, 2);">Sabio Use Cases</h1>
+        <h2><a href="upload_pdf" class="use-case-link">OCR Application</a></h2>
+        <h2><a href="/process_specific_fields"  class="use-case-link">Extract Specific fields</a></h2>
+    </div>
+    <!-- <div class="sidebar">
+        <h2 style="color: #05214d;">Sabio Use Cases</h2>
+        <ul>
+            <li><a href="#" id="ocrOption">OCR Application</a></li>
+            <li><a href="#" id="chatbotOption">AI Chatbot</a></li>
+        </div> -->
+    <!-- <script>
+    
+        // JavaScript code for handling option selection
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('ocrOption').addEventListener('click', function(event) {
+                event.preventDefault();
+                // Example: Redirect to OCR application page
+                window.location.href = 'upload_pdf'; // Replace with your OCR application URL
+            });
+        });;
+    </script> -->
+</body>
+</html>

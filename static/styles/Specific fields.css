@@ -1,0 +1,302 @@
+body {
+               font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+               margin: 0;
+               padding: 0;
+               background-color: #F0F8FF;
+           }
+           
+           .container {
+               display: flex;
+               height: 100vh;
+               width: 100%;
+           }
+           
+           .options {
+               flex: 1;
+               padding: 20px;
+               background-color: hsla(0, 0%, 95%, 0.921);
+               color: black;
+               width: 20%;
+        
+           }
+           
+           .options:hover {
+               background-color: hsla(0, 0%, 95%, 0.921);
+           }
+           
+           .options a:hover {
+               background-color: #057909;
+               color: white;
+           }
+           .content{
+            flex:2;
+            padding:20px;
+            background-color: rgba(255, 255, 255, 0.741);
+            color:black;
+            overflow-y:auto;
+            width:40%;
+
+           }
+           
+            .upload-pdf {
+                              flex: 3;
+                              padding: 20px;
+                              background-color: hsla(0, 0%, 95%, 0.726);
+                              color: black;
+                              width: 40%; /* Set width to 40% for upload-pdf container */
+                             /* Remove transition effect */
+                             }
+            .options a{
+                display:block;
+                color:black;
+                text-decoration: none;
+                margin-bottom: 10px;
+                transition: background-color 0.3s;
+            }         
+           .container1 {
+               justify-content: space-between;
+           }
+           form {
+               text-align: center;
+               align-items: center;
+    
+           }
+   
+           label {
+               font-weight: bold;
+           }
+   
+           input[type="text"] {
+               width: 60%;
+               padding: 10px;
+               margin-bottom: 20px;
+               border-radius: 5px;
+               border: 1px solid #ccc;
+               box-sizing: border-box;
+           }
+   
+           button[type="submit"] {
+               background-color: #4CAF50;
+               color: white;
+               padding: 10px 20px;
+               border: none;
+               border-radius: 5px;
+
+               cursor: pointer;
+           }
+   
+           button[type="submit"]:hover {
+               background-color: #45a049;
+           }
+   
+           #result {
+               margin-top: 20px;
+               text-align: center;
+           }
+    
+           h1, h2, h3 {
+               color: #029107;
+           }
+           
+           .hover-effect {
+               transition: color 0.3s;
+           }
+           
+           .hover-effect:hover {
+               color: #057909;
+           }
+           .upload-pdf{
+            background-color:#f1f1f1;
+            padding: 20px ;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           }
+           /*-----------suggestions box--------------*/
+           #suggestions {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  margin-left:100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+  width: 100px; /* Adjust according to your design */
+
+    
+}
+
+#suggestions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  align-items: center;
+}
+
+#suggestions ul li {
+  padding: 8px 12px;
+  cursor: pointer;text-align: center;
+  align-items: center;
+}
+
+#suggestions ul li:hover {
+  background-color: #057909;
+}
+
+/* suggestions box */
+
+.select-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    width:80%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background:  #4CAF50;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+}
+.list-items{
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    width:40%;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.select-btn.open ~ .list-items{
+    display: block;
+}
+.list-items .item{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+.list-items .item:hover{
+    background-color: #e7edfe;
+}
+.item .item-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+.item .checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+.item.checked .checkbox{
+    background-color: #4CAF50;
+    border-color:  #4CAF50;
+}
+.checkbox .check-icon{
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .check-icon{
+    transform: scale(1);
+}
+
+.list-items{
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    width: 40%;
+    max-height: 200px; 
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/*-----------------PDFS SECTION----------------------------------------*/
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: adjust this based on your layout */
+  }
+  
+.dropdown {
+    display: inline-block;
+    position: relative;
+    top:20%;
+  }
+  #pdfSelect {
+    display: none;
+  }
+  .dropdown-toggle {
+    padding:0px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    max-height: 200px; /* Set maximum height */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #029107;
+  }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  .pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust this based on your layout */
+}
