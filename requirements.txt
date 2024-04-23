@@ -11,7 +11,7 @@ azure-ai-formrecognizer==3.3.1
 Pillow==10.0.1
 spacy-transformers==1.3.2
 gunicorn==21.2.0
-Werkzeug==2.0.3
+Werkzeug==3.0.2
 opencv-python==4.8.1.78
 Flask-WTF==1.2.1
 WTForms==3.1.2
