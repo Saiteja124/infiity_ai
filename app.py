@@ -560,6 +560,6 @@ def generate_response():
 #         return jsonify({'detection_output': detection_output})
 
 
-if __name__ == '__main__':
-    # Use this for development purposes, switch to a production-ready server for deployment
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     # Use this for development purposes, switch to a production-ready server for deployment
+#     app.run(debug=True)
